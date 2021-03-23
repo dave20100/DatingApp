@@ -50,7 +50,7 @@ namespace Api.Data
                 .ToListAsync();
         }
 
-        public async Task<bool> SaveAllAync()
+        public async Task<bool> SaveAllAsync()
         {
             return await _context.SaveChangesAsync() > 0;
         }
