@@ -56,19 +56,8 @@ export class UserManagementComponent implements OnInit {
     ];
 
     availableRoles.forEach(role => {
-      let isMatch = false;
-      for(const userRole of userRoles) {
-        if(role.name === userRole){
-          isMatch = true;
-          role.checked = true;
-          roles.push(role);
-          break;
-        }
-      }
-      if(!isMatch) {
-        role.checked = false;
-        roles.push(role);
-      }
+      role.checked = userRoles.includes(role.name);
+      roles.push(role);
     })
     return roles;
   }
